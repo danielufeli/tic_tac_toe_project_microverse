@@ -11,7 +11,7 @@ class Board
      ++++++++++++++
       #{@board_cell[3]}  |  #{@board_cell[4]}  |  #{@board_cell[5]}
      ++++++++++++++
-      #{@board_cell[6]}  |  #{@board_cell[7]}  |  #{@board_cell[8]} 
+      #{@board_cell[6]}  |  #{@board_cell[7]}  |  #{@board_cell[8]}
    )
   end
 
