@@ -74,19 +74,19 @@ class Game
   end
 
   def game_ended(turn_count)
-    if turn_count >= 5
-      WINNING_COMBO.each do |arr_val|
-        if @player1.square.intersection(arr_val) == arr_val
-          @winner = @player1.name
-          return true
-        elsif @player2.square.intersection(arr_val) == arr_val
-          @winner = @player2.name
-          return true
-        end
-      end
-      return true if @board.board_cell.all?(String)
+    return unless turn_count >= 5
 
-      false
+    WINNING_COMBO.each do |arr_val|
+      if @player1.square.intersection(arr_val) == arr_val
+        @winner = @player1.name
+        return true
+      elsif @player2.square.intersection(arr_val) == arr_val
+        @winner = @player2.name
+        return true
+      end
     end
+    return true if @board.board_cell.all?(String)
+
+    false
   end
 end
