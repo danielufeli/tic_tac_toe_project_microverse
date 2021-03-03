@@ -1,25 +1,25 @@
 class Board
-    WINNING_COMBO = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]].freeze
-    BOARD = Array.new(9, '')
+  attr_reader :board_cell
 
+  def initialize
+    @board_cell = ['1','2','3','4','6','6','7','8','9']
+  end
 
-    def board
-      puts "  #{BOARD[0]}  | #{BOARD[1]}  | #{BOARD[2]}"
-      puts '______________'
-      puts "  #{BOARD[3]}  | #{BOARD[4]}  | #{BOARD[5]}"
-      puts '______________'
-      puts "  #{BOARD[6]}  | #{BOARD[7]}  | #{BOARD[8]}"
-    end
-    
-    
-    def update_board
-      BOARD.length.times do
-      puts 'enter the position you want to insert your icon'
-      value = gets.chomp.to_i
-      BOARD[value - 1] = 'X'
-      puts board
-      end
-    end
-    
+  def print_board
+   puts %(
+       #{@board_cell[0]}  |  #{@board_cell[1]}  |  #{@board_cell[2]} 
+     ++++++++++++++
+      #{@board_cell[3]}  |  #{@board_cell[4]}  |  #{@board_cell[5]} 
+     ++++++++++++++
+      #{@board_cell[6]}  |  #{@board_cell[7]}  |  #{@board_cell[8]} 
+   )    
+  end
+
+  def update_board(index, value)
+    @board_cell[index - 1] = value
+    print_board
+  end
+  
+  
 end
 
