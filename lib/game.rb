@@ -4,8 +4,8 @@ require_relative 'board'
 
 class Game
     WINNING_COMBO = [
-        [0, 3, 7], [1, 4, 7], [2, 5, 8], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6]
-    ]
+        [1, 2, 3], [4, 5, 6], [7 ,8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]
+    ].freeze
 
     def initialize
       @board = Board.new
@@ -20,14 +20,63 @@ class Game
     play_game
   end
 
-  # up next the funtionality and the game creation.
-   
-  
-    def valid_move(index)
-        index.between?(1, 9) && @board.board_cell[index.to_i - 1].is_a?(Numeric)
+  def create_players
+      puts 'player one enter your name'
+      player_one = gets.chomp
+      puts 'player two enter your name too'
+      player_two = gets.chomp
+      while player_two == player_one
+        puts 'ooops!! you both can\'t have the same name.'
+        player_two = gets.chomp
+      end
+      puts 'player one enter your icon.'
+      icon1 = gets.chomp
+      puts 'player two enter your icon.'
+      icon2 = gets.chomp
+      @player1 = Player.new(player_one, icon1)
+      @player2 = Player.new(player_two, icon2)
+      puts @player1.name
+      puts @player2.name
+  end
+
+   def play_game
+    played_count = 1
+    until game_ended(played_count)
+      @board.print_board
+      if played_count % 2 != 0
+        move(@player1)
+      else
+        move(@player2)
+      end
+      
+      played_count += 1
+    end
+    @board.print_board
+     
+    if @winner
+      puts "Game over: #{@winner} wins!!!"
+    else
+      puts "It's a draw!"
     end
     
-    def game_ended?(turn_count)
+  end
+  
+  def move(player)
+      puts "#{player.name}'s turn"
+      index = gets.chomp
+      until valid_move(index.to_i)
+          puts 'enter a valid value, try again'
+          index = gets.chomp
+      end
+      @board.update_board(index, player.icon)
+      player.square.push(index.to_i)
+  end
+
+    def valid_move(index)
+        index.between?(1, 9) && @board.board_cell[index - 1].is_a?(Numeric)
+    end
+    
+    def game_ended(turn_count)
       if turn_count >= 5
         WINNING_COMBO.each do |arr_val|
           if @player1.square.intersection(arr_val) == arr_val
@@ -39,19 +88,10 @@ class Game
           end
         end
       end
-      return false if @board.board_cell.all?(String)
+      return true if @board.board_cell.all?(String) 
       false
     end
     
-  def move(player)
-      puts "#{player.name}'s turn"
-      index = gets.chomp.to_i
-      while valid_move(index.to_i)
-          puts 'enter a valid value'
-          index = gets.chomp
-      end
-      @board.update_board(index.to_i, player.icon)
-      player.square.push(index - 1)
-  end
+  
 end
 
