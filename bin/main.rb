@@ -78,17 +78,9 @@ module Maingame
       elsif @game.player2.square.intersection(arr_val) == arr_val
         @game.winner = @game.player2.name
         return true
-      elsif @game.player1.square.intersection(arr_val) == arr_val && @game.board.board_cell.all?(String)
-        @game.winner = @game.player1.name
-        return true
-      elsif @game.player2.square.intersection(arr_val) == arr_val && @game.board.board_cell.all?(String)
-        @game.winner = @game.player2.name
-        return true
       end
     end
-    return true if @game.board.board_cell.all?(String)
-
-    false
+    @game.board.board_cell.all?(String) ? true : false
   end
 end
 
