@@ -29,6 +29,7 @@ module Maingame
     @game.player1 = Player.new(player_one, icon1)
     @game.player2 = Player.new(player_two, icon2)
     puts @game.player1.name
+    puts 'versus'
     puts @game.player2.name
   end
 
@@ -37,8 +38,10 @@ module Maingame
     until game_ended(played_count)
       @game.board.print_board
       if played_count.odd?
+        puts 'Player one\' turn'
         move(@game.player1)
       else
+        puts 'Player two\' turn'
         move(@game.player2)
       end
 
