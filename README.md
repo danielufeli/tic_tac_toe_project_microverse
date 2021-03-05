@@ -8,7 +8,16 @@ To get a local copy up and running follow these simple example steps.
 Go to the main page of the repo.
 Press the "Code" button and get the repo link.
 git clone.
-go to the main.rb and run the game.
+on the CLI, run "bin/main.rb" to initialize the game.
+
+## How to play the game. 
+Tic tac toe is a game of two players. Each players chooses chooses a name and an icon as an input. The resulting board contains 9 cells, each of which is to be filled in turns by the two players until there is no empty slot. As soon as the cell's slot are all filled, the game either comes to an end when there is no winner or when a player accumulating icons makes a straight either ways on the board. when this happens, there is a WINNER.
+
+## Rules of the game. 
+players are not to select an already selected slot.
+you choose a number as visible on the board.
+
+Good luck...
 
 
 👤 **Promise Johnson**

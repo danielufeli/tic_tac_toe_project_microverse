@@ -10,4 +10,6 @@ class Game
     @player2 = nil
     @winner = nil
   end
+
+  
 end
