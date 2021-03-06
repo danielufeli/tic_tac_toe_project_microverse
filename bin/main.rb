@@ -32,7 +32,6 @@ until @game.game_ended(played_count)
       index = gets.chomp
     end
     @game.board.update_board(index, @game.player1.icon)
-    @game.board.print_board
     @game.player1.square.push(index.to_i)
   else
     puts "#{@game.player2.name}'s turn"
@@ -42,7 +41,6 @@ until @game.game_ended(played_count)
       index = gets.chomp
     end
     @game.board.update_board(index, @game.player2.icon)
-    @game.board.print_board
     @game.player2.square.push(index.to_i)
   end
   played_count += 1
