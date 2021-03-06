@@ -19,17 +19,6 @@ class Game
     index.between?(1, 9) && @board.board_cell[index - 1].is_a?(Numeric)
   end
 
-  def move(player)
-    puts "#{player.name}'s turn"
-    index = gets.chomp
-    until valid_move(index.to_i)
-      puts 'enter a valid value, try again'
-      index = gets.chomp
-    end
-    @board.update_board(index, player.icon)
-    player.square.push(index.to_i)
-  end
-
   def game_ended(turn_count)
     return unless turn_count >= 5
 

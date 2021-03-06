@@ -23,13 +23,28 @@ puts @game.player2.name
 
 played_count = 1
 until @game.game_ended(played_count)
-  @game.board.print_board
+  puts @game.board.print_board
   if played_count.odd?
-    @game.move(@game.player1)
+    puts "#{@game.player1.name}'s turn"
+    index = gets.chomp
+    until @game.valid_move(index.to_i)
+      puts 'enter a valid value, try again'
+      index = gets.chomp
+    end
+    @game.board.update_board(index, @game.player1.icon)
+    @game.board.print_board
+    @game.player1.square.push(index.to_i)
   else
-    @game.move(@game.player2)
+    puts "#{@game.player2.name}'s turn"
+    index = gets.chomp
+    until @game.valid_move(index.to_i)
+      puts 'enter a valid value, try again'
+      index = gets.chomp
+    end
+    @game.board.update_board(index, @game.player2.icon)
+    @game.board.print_board
+    @game.player2.square.push(index.to_i)
   end
-
   played_count += 1
 end
 @game.board.print_board
