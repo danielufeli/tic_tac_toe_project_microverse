@@ -21,6 +21,11 @@ describe Game do
       game_class.board.board_cell = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
       expect(game_class.game_ended(9)).to be true
     end
-    # other rspec methods go here on the game class.
+    it 'should return true if there is a winner and play count is at least 5.' do
+      expect(game_class.game_ended(5)).to be true
+    end
+    it 'should return false if the play count is less than 5.' do
+      expect(game_class.game_ended(4)).to be false
+    end
   end
 end
