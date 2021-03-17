@@ -17,8 +17,8 @@ describe Game do
   end
   describe '#game_ended' do
     it 'should return true if the play count is 9. (a draw)' do
-    #   game_class.board.board_cell = %w[x o x o x o x o x]
-      game_class.board.board_cell = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+      #   game_class.board.board_cell = %w[x o x o x o x o x]
+      game_class.board.board_cell = %w[x o x o x o x o x]
       expect(game_class.game_ended(9)).to be true
     end
     it 'should return true if there is a winner and play count is at least 5.' do
