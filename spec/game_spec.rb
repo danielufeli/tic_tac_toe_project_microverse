@@ -12,7 +12,11 @@ describe Game do
     end
 
     it 'should return true if a move is valid.' do
-      expect(game_class.valid_move(3)).to be true
+      expect(game_class.valid_move(8)).to be true
+    end
+    
+    it 'should return false if a move is invalid.' do
+      expect(game_class.valid_move(10)).to be false 
     end
   end
   describe '#game_ended' do
@@ -21,6 +25,12 @@ describe Game do
       game_class.board.board_cell = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
       expect(game_class.game_ended(9)).to be true
     end
-    # other rspec methods go here on the game class.
+    it 'should return true if there is a winner and play count is at least 5.' do
+      # game_class.board.board_cell = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+      expect(game_class.game_ended(5)).to be true
+    end
+    it 'should return false if the play count is less than 5.' do
+      expect(game_class.game_ended(4)).to be false
+    end
   end
 end
