@@ -14,9 +14,8 @@ describe Game do
     it 'should return true if a move is valid.' do
       expect(game_class.valid_move(8)).to be true
     end
-    
     it 'should return false if a move is invalid.' do
-      expect(game_class.valid_move(10)).to be false 
+      expect(game_class.valid_move(10)).to be false
     end
   end
   describe '#game_ended' do
