@@ -1,44 +1,74 @@
-# tic_tac_toe_project_microverse
-A tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns. It was built purely on ruby programming language.
+# rspec-tictactoe
+This is the implementation of the Rspec Teston the popular TIC-TAC-TOE Game created using the Ruby programming Language
 
+
+Built With:
+
+- Ruby
+- VS Code
+- Ubuntu
+- Rubocop linter
 
 ## Getting Started
-To get a local copy up and running follow these simple example steps.
 
-Go to the main page of the repo.
-Press the "Code" button and get the repo link.
-paste the repository link on the like: `git clone [git-address]`
-on the CLI, run `bin/main.rb` to initialize the game.
+To get your own copy of our project simply clone the repository to your local machine.
 
-## How to play the game. 
-Tic tac toe is a game of two players. Each players chooses chooses a name and an icon as an input. The resulting board contains 9 cells, each of which is to be filled in turns by the two players until there is no empty slot. As soon as the cell's slot are all filled, the game either comes to an end when there is no winner or when a player accumulating icons makes a straight either ways on the board. when this happens, there is a WINNER. The game allows for match on the board on vertical, horizontal and even diagonals for a win.
-The player 1 puts his/her name at the prompt to do so do player2. They also choose their icon.
+Step 1: Type the following command into a git shell
 
+git clone https://github.com/promise-J/rspec-tictactoe
 
-## Rules of the game. 
-players are not to select an already selected slot.
-you choose a number as visible on the board.
+Step 2: Direct a terminal into the cloned repository directory
 
-Good luck...
+cd rspec-tictactoe
 
+Step 3: Run the program from command line
 
-👤 **Promise Johnson**
+Step 4: Run rspec from your terminal.
 
+## Authors
+
+👤  **Promise Johnson**
 - GitHub: [promise-J](https://github.com/promise-J)
 - Twitter: [@twitterhandle](https://twitter.com/Promise94353263)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/promise-chiemela-788887142)
 bust_in_silhouette Johnson Promise
 
+👤 **Eneh Charles Chukwunweike**
 
-👤 **Daniel Ufeli**
+- GitHub: [@charlyeneh](https://github.com/charlyeneh)
+- Twitter: [@twitterhandle](https://twitter.com/ProgrammerBaby?s=09)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/charles-chukwunweike-eneh-5345a2147)
 
-- Github: [@danielufeli](https://github.com/danielufeli)
-- Twitter: [@danielufeli](https://twitter.com/danielufeli)
-- Linkedin: [danielufeli](https://www.linkedin.com/in/danielufeli/)
-bust_in_silhouette Daniel Ufeli
+## 🤝 Contributing
 
-handshake Contributing
+Contributions, issues, and feature requests are welcome!
 
-Contributions, issues and feature requests are welcome!
+## Show your support
 
-Feel free to check the issues page.
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+MIT License
+
+Copyright (c) 2021 Promise Johnson and Eneh Charles Chukwunweike 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+=======
+

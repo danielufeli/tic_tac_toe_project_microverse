@@ -6,16 +6,32 @@ require_relative '../lib/player'
 
 puts 'player one enter your name'
 player_one = gets.chomp
+while player_one == ''
+  puts 'player name cant be empty. please try again.'
+  player_one = gets.chomp
+end
 puts 'player two enter your name too'
 player_two = gets.chomp
+while player_two == ''
+  puts 'player name cant be empty. please try again.'
+  player_two = gets.chomp
+end
 while player_two == player_one
   puts 'ooops!! you both can\'t have the same name.'
   player_two = gets.chomp
 end
 puts 'player one enter your icon.'
 icon1 = gets.chomp
+while icon1 == ''
+  puts 'icon cant be empty. try again'
+  icon1 = gets.chomp
+end
 puts 'player two enter your icon.'
 icon2 = gets.chomp
+while icon2 == ''
+  puts 'icon cant be empty. try again'
+  icon2 = gets.chomp
+end
 @game.player1 = Player.new(player_one, icon1)
 @game.player2 = Player.new(player_two, icon2)
 puts @game.player1.name
